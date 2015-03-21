@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Ear_Buddy_4
 //
-//  Created by Robby on 3/21/15.
-//  Copyright (c) 2015 Marshall. All rights reserved.
+//  Created by Connor Goggans, Robby Marshall, and Vicky Yao on 3/21/15.
+//  Copyright (c) 2015 Connor Goggans, Robby Marshall, and Vicky Yao. All rights reserved.
 //
 
 import UIKit

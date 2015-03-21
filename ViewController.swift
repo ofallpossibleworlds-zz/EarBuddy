@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Earbuddy
 //
-//  Created by Connor Goggans on 3/21/15.
-//  Copyright (c) 2015 Connor Goggans. All rights reserved.
+//  Created by Connor Goggans, Robby Marshall, and Vicky Yao on 3/21/15.
+//  Copyright (c) 2015 Connor Goggans, Robby Marshall, and Vicky Yao. All rights reserved.
 //
 
 import UIKit
@@ -196,7 +196,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         let levelOutput = NSString(format: "%.2f", -1.0 * averageLevel!)
-        if (averageLevel >= 100) {
+        
+        
+        if (averageLevel >= 94) {
             addData(levelOutput)
         }
         
