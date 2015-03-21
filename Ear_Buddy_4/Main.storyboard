@@ -12,24 +12,10 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-Eb-ZFM">
-                                <rect key="frame" x="190" y="28" width="221" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="221" id="Ouu-ik-s7I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Check Now!">
-                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="checkLevels" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iPR-f6-KzD"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3j-oV-zuC">
                                 <rect key="frame" x="0.0" y="550" width="600" height="42"/>
                                 <constraints>
@@ -54,8 +40,24 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Ivs-zE-wg0"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-Eb-ZFM">
+                                <rect key="frame" x="190" y="28" width="221" height="51"/>
+                                <color key="backgroundColor" red="0.099711326651400506" green="0.15751181541921125" blue="0.16682449494949492" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="Ouu-ik-s7I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Check Now!">
+                                    <color key="titleColor" red="0.95271184232944917" green="0.9596330991239016" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkLevels" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iPR-f6-KzD"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.47688369088416216" green="0.81788490939191605" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.60392156860000001" green="0.94509803920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Fyc-av-q8l" firstAttribute="centerX" secondItem="Z2J-Eb-ZFM" secondAttribute="centerX" id="4ml-Gz-BCv"/>
                             <constraint firstItem="Fyc-av-q8l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="DYs-7w-aJo"/>

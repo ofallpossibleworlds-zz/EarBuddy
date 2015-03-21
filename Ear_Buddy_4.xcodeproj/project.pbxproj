@@ -13,7 +13,7 @@
 		D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3191ABE30C100BDC2E3 /* LaunchScreen.xib */; };
 		D55AB3271ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */; };
 		D55AB3311ABE30ED00BDC2E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */; };
-		D55AB3331ABE310C00BDC2E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3321ABE310C00BDC2E3 /* Main.storyboard */; };
+		D5C7D5BD1ABE35C1003DBFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		D55AB3251ABE30C100BDC2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ear_Buddy_4Tests.swift; sourceTree = "<group>"; };
 		D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
-		D55AB3321ABE310C00BDC2E3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		D55AB30A1ABE30C100BDC2E3 /* Ear_Buddy_4 */ = {
 			isa = PBXGroup;
 			children = (
-				D55AB3321ABE310C00BDC2E3 /* Main.storyboard */,
+				D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */,
 				D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */,
 				D55AB30D1ABE30C100BDC2E3 /* AppDelegate.swift */,
 				D55AB3171ABE30C100BDC2E3 /* Images.xcassets */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55AB3331ABE310C00BDC2E3 /* Main.storyboard in Resources */,
+				D5C7D5BD1ABE35C1003DBFC4 /* Main.storyboard in Resources */,
 				D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */,
 				D55AB3181ABE30C100BDC2E3 /* Images.xcassets in Resources */,
 			);
@@ -403,6 +403,7 @@
 				D55AB32C1ABE30C100BDC2E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D55AB32D1ABE30C100BDC2E3 /* Build configuration list for PBXNativeTarget "Ear_Buddy_4Tests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				D55AB32F1ABE30C100BDC2E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
