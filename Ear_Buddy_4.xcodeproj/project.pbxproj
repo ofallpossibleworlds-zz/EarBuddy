@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D55AB30E1ABE30C100BDC2E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB30D1ABE30C100BDC2E3 /* AppDelegate.swift */; };
+		D55AB3111ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D55AB30F1ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld */; };
+		D55AB3131ABE30C100BDC2E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3121ABE30C100BDC2E3 /* ViewController.swift */; };
+		D55AB3161ABE30C100BDC2E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3141ABE30C100BDC2E3 /* Main.storyboard */; };
+		D55AB3181ABE30C100BDC2E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3171ABE30C100BDC2E3 /* Images.xcassets */; };
+		D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3191ABE30C100BDC2E3 /* LaunchScreen.xib */; };
+		D55AB3271ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D55AB3211ABE30C100BDC2E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D55AB3001ABE30C100BDC2E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D55AB3071ABE30C100BDC2E3;
+			remoteInfo = Ear_Buddy_4;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D55AB3081ABE30C100BDC2E3 /* Ear_Buddy_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ear_Buddy_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55AB30C1ABE30C100BDC2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55AB30D1ABE30C100BDC2E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D55AB3101ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ear_Buddy_4.xcdatamodel; sourceTree = "<group>"; };
+		D55AB3121ABE30C100BDC2E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D55AB3151ABE30C100BDC2E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D55AB3171ABE30C100BDC2E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D55AB31A1ABE30C100BDC2E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D55AB3201ABE30C100BDC2E3 /* Ear_Buddy_4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ear_Buddy_4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55AB3251ABE30C100BDC2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ear_Buddy_4Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D55AB3051ABE30C100BDC2E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55AB31D1ABE30C100BDC2E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D55AB2FF1ABE30C100BDC2E3 = {
+			isa = PBXGroup;
+			children = (
+				D55AB30A1ABE30C100BDC2E3 /* Ear_Buddy_4 */,
+				D55AB3231ABE30C100BDC2E3 /* Ear_Buddy_4Tests */,
+				D55AB3091ABE30C100BDC2E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D55AB3091ABE30C100BDC2E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D55AB3081ABE30C100BDC2E3 /* Ear_Buddy_4.app */,
+				D55AB3201ABE30C100BDC2E3 /* Ear_Buddy_4Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D55AB30A1ABE30C100BDC2E3 /* Ear_Buddy_4 */ = {
+			isa = PBXGroup;
+			children = (
+				D55AB30D1ABE30C100BDC2E3 /* AppDelegate.swift */,
+				D55AB3121ABE30C100BDC2E3 /* ViewController.swift */,
+				D55AB3141ABE30C100BDC2E3 /* Main.storyboard */,
+				D55AB3171ABE30C100BDC2E3 /* Images.xcassets */,
+				D55AB3191ABE30C100BDC2E3 /* LaunchScreen.xib */,
+				D55AB30F1ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld */,
+				D55AB30B1ABE30C100BDC2E3 /* Supporting Files */,
+			);
+			path = Ear_Buddy_4;
+			sourceTree = "<group>";
+		};
+		D55AB30B1ABE30C100BDC2E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D55AB30C1ABE30C100BDC2E3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D55AB3231ABE30C100BDC2E3 /* Ear_Buddy_4Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */,
+				D55AB3241ABE30C100BDC2E3 /* Supporting Files */,
+			);
+			path = Ear_Buddy_4Tests;
+			sourceTree = "<group>";
+		};
+		D55AB3241ABE30C100BDC2E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D55AB3251ABE30C100BDC2E3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D55AB3071ABE30C100BDC2E3 /* Ear_Buddy_4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55AB32A1ABE30C100BDC2E3 /* Build configuration list for PBXNativeTarget "Ear_Buddy_4" */;
+			buildPhases = (
+				D55AB3041ABE30C100BDC2E3 /* Sources */,
+				D55AB3051ABE30C100BDC2E3 /* Frameworks */,
+				D55AB3061ABE30C100BDC2E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ear_Buddy_4;
+			productName = Ear_Buddy_4;
+			productReference = D55AB3081ABE30C100BDC2E3 /* Ear_Buddy_4.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D55AB31F1ABE30C100BDC2E3 /* Ear_Buddy_4Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55AB32D1ABE30C100BDC2E3 /* Build configuration list for PBXNativeTarget "Ear_Buddy_4Tests" */;
+			buildPhases = (
+				D55AB31C1ABE30C100BDC2E3 /* Sources */,
+				D55AB31D1ABE30C100BDC2E3 /* Frameworks */,
+				D55AB31E1ABE30C100BDC2E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D55AB3221ABE30C100BDC2E3 /* PBXTargetDependency */,
+			);
+			name = Ear_Buddy_4Tests;
+			productName = Ear_Buddy_4Tests;
+			productReference = D55AB3201ABE30C100BDC2E3 /* Ear_Buddy_4Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D55AB3001ABE30C100BDC2E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Marshall;
+				TargetAttributes = {
+					D55AB3071ABE30C100BDC2E3 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D55AB31F1ABE30C100BDC2E3 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D55AB3071ABE30C100BDC2E3;
+					};
+				};
+			};
+			buildConfigurationList = D55AB3031ABE30C100BDC2E3 /* Build configuration list for PBXProject "Ear_Buddy_4" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D55AB2FF1ABE30C100BDC2E3;
+			productRefGroup = D55AB3091ABE30C100BDC2E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D55AB3071ABE30C100BDC2E3 /* Ear_Buddy_4 */,
+				D55AB31F1ABE30C100BDC2E3 /* Ear_Buddy_4Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D55AB3061ABE30C100BDC2E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55AB3161ABE30C100BDC2E3 /* Main.storyboard in Resources */,
+				D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */,
+				D55AB3181ABE30C100BDC2E3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55AB31E1ABE30C100BDC2E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D55AB3041ABE30C100BDC2E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55AB3131ABE30C100BDC2E3 /* ViewController.swift in Sources */,
+				D55AB3111ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld in Sources */,
+				D55AB30E1ABE30C100BDC2E3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55AB31C1ABE30C100BDC2E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55AB3271ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D55AB3221ABE30C100BDC2E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D55AB3071ABE30C100BDC2E3 /* Ear_Buddy_4 */;
+			targetProxy = D55AB3211ABE30C100BDC2E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D55AB3141ABE30C100BDC2E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D55AB3151ABE30C100BDC2E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D55AB3191ABE30C100BDC2E3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D55AB31A1ABE30C100BDC2E3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D55AB3281ABE30C100BDC2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D55AB3291ABE30C100BDC2E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D55AB32B1ABE30C100BDC2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ear_Buddy_4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D55AB32C1ABE30C100BDC2E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ear_Buddy_4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D55AB32E1ABE30C100BDC2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Ear_Buddy_4Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ear_Buddy_4.app/Ear_Buddy_4";
+			};
+			name = Debug;
+		};
+		D55AB32F1ABE30C100BDC2E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Ear_Buddy_4Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ear_Buddy_4.app/Ear_Buddy_4";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D55AB3031ABE30C100BDC2E3 /* Build configuration list for PBXProject "Ear_Buddy_4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55AB3281ABE30C100BDC2E3 /* Debug */,
+				D55AB3291ABE30C100BDC2E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D55AB32A1ABE30C100BDC2E3 /* Build configuration list for PBXNativeTarget "Ear_Buddy_4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55AB32B1ABE30C100BDC2E3 /* Debug */,
+				D55AB32C1ABE30C100BDC2E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D55AB32D1ABE30C100BDC2E3 /* Build configuration list for PBXNativeTarget "Ear_Buddy_4Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55AB32E1ABE30C100BDC2E3 /* Debug */,
+				D55AB32F1ABE30C100BDC2E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D55AB30F1ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D55AB3101ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodel */,
+			);
+			currentVersion = D55AB3101ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodel */;
+			path = Ear_Buddy_4.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D55AB3001ABE30C100BDC2E3 /* Project object */;
+}
