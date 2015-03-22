@@ -13,7 +13,9 @@
 		D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55AB3191ABE30C100BDC2E3 /* LaunchScreen.xib */; };
 		D55AB3271ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */; };
 		D55AB3311ABE30ED00BDC2E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */; };
+		D5A1C2F41ABEA6BA00FBB03E /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A1C2F31ABEA6BA00FBB03E /* CustomObject.m */; };
 		D5C7D5BD1ABE35C1003DBFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */; };
+		D5DF7C461ABE9521003CA14F /* earbuddy icon 180 version.png in Resources */ = {isa = PBXBuildFile; fileRef = D5DF7C451ABE9521003CA14F /* earbuddy icon 180 version.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,11 @@
 		D55AB3251ABE30C100BDC2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55AB3261ABE30C100BDC2E3 /* Ear_Buddy_4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ear_Buddy_4Tests.swift; sourceTree = "<group>"; };
 		D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		D5A1C2F21ABEA6B900FBB03E /* Ear_Buddy_4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ear_Buddy_4-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		D5A1C2F31ABEA6BA00FBB03E /* CustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomObject.m; path = ../CustomObject.m; sourceTree = "<group>"; };
+		D5A1C2F51ABEA94500FBB03E /* CustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomObject.h; path = ../CustomObject.h; sourceTree = "<group>"; };
 		D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D5DF7C451ABE9521003CA14F /* earbuddy icon 180 version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earbuddy icon 180 version.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 		D55AB30A1ABE30C100BDC2E3 /* Ear_Buddy_4 */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1C2F21ABEA6B900FBB03E /* Ear_Buddy_4-Bridging-Header.h */,
+				D5A1C2F31ABEA6BA00FBB03E /* CustomObject.m */,
+				D5A1C2F51ABEA94500FBB03E /* CustomObject.h */,
 				D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */,
 				D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */,
 				D55AB30D1ABE30C100BDC2E3 /* AppDelegate.swift */,
@@ -93,6 +102,7 @@
 		D55AB30B1ABE30C100BDC2E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5DF7C451ABE9521003CA14F /* earbuddy icon 180 version.png */,
 				D55AB30C1ABE30C100BDC2E3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -200,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DF7C461ABE9521003CA14F /* earbuddy icon 180 version.png in Resources */,
 				D5C7D5BD1ABE35C1003DBFC4 /* Main.storyboard in Resources */,
 				D55AB31B1ABE30C100BDC2E3 /* LaunchScreen.xib in Resources */,
 				D55AB3181ABE30C100BDC2E3 /* Images.xcassets in Resources */,
@@ -223,6 +234,7 @@
 				D55AB3311ABE30ED00BDC2E3 /* ViewController.swift in Sources */,
 				D55AB3111ABE30C100BDC2E3 /* Ear_Buddy_4.xcdatamodeld in Sources */,
 				D55AB30E1ABE30C100BDC2E3 /* AppDelegate.swift in Sources */,
+				D5A1C2F41ABEA6BA00FBB03E /* CustomObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,9 +351,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Ear_Buddy_4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ear_Buddy_4;
+				SWIFT_OBJC_BRIDGING_HEADER = "Ear_Buddy_4-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -349,9 +364,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Ear_Buddy_4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(EarBuddy)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ear_Buddy_4-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -369,7 +386,7 @@
 				);
 				INFOPLIST_FILE = Ear_Buddy_4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ear_Buddy_4Tests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ear_Buddy_4.app/Ear_Buddy_4";
 			};
 			name = Debug;
@@ -384,7 +401,7 @@
 				);
 				INFOPLIST_FILE = Ear_Buddy_4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ear_Buddy_4Tests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ear_Buddy_4.app/Ear_Buddy_4";
 			};
 			name = Release;

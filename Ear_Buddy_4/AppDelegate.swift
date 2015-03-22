@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
     var window: UIWindow?
 
     var recorder: AVAudioRecorder?
-
+    
+    var loop = true
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
@@ -68,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
 
         
+        
+        
+        
+        
         return true
     }
 
@@ -80,13 +86,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        checkLevels()
+        let dirPaths =
+        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
+        let docsDir = dirPaths[0] as String
+        let soundFilePath =
+        docsDir.stringByAppendingPathComponent("sound.caf")
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        let recordSettings =
+        [AVEncoderAudioQualityKey: AVAudioQuality.Max.rawValue,
+            AVEncoderBitRateKey: 12800,
+            AVNumberOfChannelsKey: 2,
+            AVSampleRateKey: 44100.0]
         
+        var error: NSError?
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord,
+            error: &error)
+        
+        if let err = error {
+            println("audioSession error: \(err.localizedDescription)")
+        }
+        
+        recorder = AVAudioRecorder(URL: soundFileURL,
+            settings: recordSettings, error: &error)
+        
+        self.recorder?.meteringEnabled = true;
+        
+        if let err = error {
+            println("audioSession error: \(err.localizedDescription)")
+        } else {
+            recorder?.prepareToRecord()
+        }
+
+        loop = true
+        //var timer = NSTimer()
+        while(checkLevels()) {}
     }
 
-    func checkLevels() {
+    var tracker = 0
+    
+    func checkLevels() -> Bool {
+        recorder?.meteringEnabled == true
         if recorder?.recording == false{
-            recorder?.recordForDuration(3.0)
+            recorder?.recordForDuration(3)
         }
         
         recorder?.updateMeters()
@@ -94,37 +138,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         //var dangerLevel:String
         
         var averageLevel = recorder?.averagePowerForChannel(0)
-        /*
-        if averageLevel < 85{
-            dangerLevel = "No Danger"
-        }else if averageLevel <= 88{
-            dangerLevel = "Damage in around 4 hours"
-        }else if averageLevel <= 91{
-            dangerLevel = "Damage in around 2 hours"
-        }else if averageLevel <= 94{
-            dangerLevel = "Damage in around 1 hour"
-        }else if averageLevel <= 97{
-            dangerLevel = "Damage in around 30 minutes"
-        }else if averageLevel <= 100{
-            dangerLevel = "Damage in around 15 minutes"
-        }else{
-            dangerLevel = "Damage very soon"
+        var level = (0.625 * averageLevel! + 90.0)
+        
+        //println("\(UIApplicationState.self)")
+        
+        if (UIApplicationDidBecomeActiveNotification != nil /*&& UIApplicationState.self != UIApplicationState.Inactive*/) {
+            if level < 88{
+                //println(level)
+                sleep(3)
+                //No Notification
+                return true
+            }else if level <= 94{
+                //println(level)
+                sleep(3)
+                if (tracker < 1) {
+                    tracker = 1
+                    var notification:UILocalNotification = UILocalNotification()
+                    notification.category = "FIRST_CATEGORY"
+                    notification.alertBody = "Be aware of your noise exposure."
+                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    return true
+                }
+            }else if level <= 100{
+                //println(level)
+                sleep(3)
+                if (tracker < 2) {
+                    tracker = 2
+                    var notification:UILocalNotification = UILocalNotification()
+                    notification.category = "FIRST_CATEGORY"
+                    notification.alertBody = "Be cautious about your noise exposure."
+                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    return true
+                }
+            }else if level <= 106{
+                sleep(3)
+                if (tracker < 3) {
+                    tracker = 3
+                    var notification:UILocalNotification = UILocalNotification()
+                    notification.category = "FIRST_CATEGORY"
+                    notification.alertBody = "Your noise level is extremely high."
+                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    return true
+                }
+            }else{
+                if (tracker < 4) {
+                    tracker = 4
+                    var notification:UILocalNotification = UILocalNotification()
+                    notification.category = "FIRST_CATEGORY"
+                    notification.alertBody = "Your noise exposure is too high."
+                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    return true
+                }
+            }
         }
-        */
-        
-        //let levelOutput = NSString(format: "%.2f", -1.0 * averageLevel!)
-        
-        
-        if (averageLevel >= 94) {
-            var notification:UILocalNotification = UILocalNotification()
-            notification.category = "FIRST_CATEGORY"
-            notification.alertBody = "Noise Levels Dangerously High"
-            notification.fireDate =
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        }
-        
-        
+        println("Exited.")
+        return false
         
         /*
         let alertController = UIAlertController(title: "Level", message: levelOutput + "\n" + dangerLevel, preferredStyle: UIAlertControllerStyle.Alert)
@@ -133,7 +201,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         self.presentViewController(alertController, animated: true, completion: nil)*/
     }
-    
+
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }

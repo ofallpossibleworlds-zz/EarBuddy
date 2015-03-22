@@ -10,12 +10,13 @@ import UIKit
 import AVFoundation
 import CoreData
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVAudioRecorderDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
     var data = [NSManagedObject]()
-    
+    //var stateChecker: CustomObject = CustomObject(UIApplication)
     
     
     //let date = NSDate()
@@ -135,7 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             println("Could not save \(error), \(error?.userInfo)")
         }  
         //5
-        data.append(storeData)
+        data.insert(storeData, atIndex: 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -158,7 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             error: &error) as [NSManagedObject]?
         
         if let results = fetchedResults {
-            data = results
+            data = results.reverse()
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
@@ -195,12 +196,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         
-        let levelOutput = NSString(format: "%.2f", (0.625) * averageLevel! + 100.0)
+        let levelOutput = NSString(format: "%.2f dB", (0.625) * averageLevel! + 100.0)
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
         
-        
-        if (averageLevel >= 94) {
-            addData(levelOutput)
-        }
+        addData("\(levelOutput) \t \(timestamp)")
         
         
         
