@@ -7,16 +7,68 @@
 //
 
 import UIKit
+import AVFoundation
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
 
     var window: UIWindow?
 
+    var recorder: AVAudioRecorder?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        // Actions
+        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "Ignore"
+        
+        firstAction.activationMode = UIUserNotificationActivationMode.Background
+        firstAction.destructive = true
+        firstAction.authenticationRequired = false
+        
+        var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "View"
+        
+        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
+        secondAction.destructive = false
+        secondAction.authenticationRequired = false
+        /*
+        var thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "THIRD_ACTION"
+        thirdAction.title = "Third Action"
+        
+        thirdAction.activationMode = UIUserNotificationActivationMode.Background
+        thirdAction.destructive = false
+        thirdAction.authenticationRequired = false
+        */
+        
+        // category
+        
+        var firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        firstCategory.identifier = "FIRST_CATEGORY"
+        
+        let defaultActions:NSArray = [firstAction, secondAction]
+        
+        firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
+        firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
+        
+        // NSSet of all our categories
+        
+        let categories:NSSet = NSSet(objects: firstCategory)
+        
+        
+        
+        let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
+        
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: categories)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
+
+        
         return true
     }
 
@@ -28,8 +80,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        checkLevels()
+        
     }
 
+    @IBAction func checkLevels() {
+        if recorder?.recording == false{
+            recorder?.recordForDuration(3.0)
+        }
+        
+        recorder?.updateMeters()
+        
+        var dangerLevel:String
+        
+        var averageLevel = recorder?.averagePowerForChannel(0)
+        /*
+        if averageLevel < 85{
+            dangerLevel = "No Danger"
+        }else if averageLevel <= 88{
+            dangerLevel = "Damage in around 4 hours"
+        }else if averageLevel <= 91{
+            dangerLevel = "Damage in around 2 hours"
+        }else if averageLevel <= 94{
+            dangerLevel = "Damage in around 1 hour"
+        }else if averageLevel <= 97{
+            dangerLevel = "Damage in around 30 minutes"
+        }else if averageLevel <= 100{
+            dangerLevel = "Damage in around 15 minutes"
+        }else{
+            dangerLevel = "Damage very soon"
+        }
+        */
+        
+        //let levelOutput = NSString(format: "%.2f", -1.0 * averageLevel!)
+        
+        
+        if (averageLevel >= 94) {
+            
+        }
+        
+        
+        
+        /*
+        let alertController = UIAlertController(title: "Level", message: levelOutput + "\n" + dangerLevel, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)*/
+    }
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
