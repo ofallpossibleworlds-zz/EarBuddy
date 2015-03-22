@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         recorder?.updateMeters()
         
-        var dangerLevel:String
+        //var dangerLevel:String
         
         var averageLevel = recorder?.averagePowerForChannel(0)
         /*
