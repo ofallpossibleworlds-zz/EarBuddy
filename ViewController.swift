@@ -178,18 +178,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var dangerLevel:String
         
         var averageLevel = recorder?.averagePowerForChannel(0)
+        var level = (0.625 * averageLevel! + 90.0)
         
-        if averageLevel < 85{
+        if level < 85{
             dangerLevel = "No Danger"
-        }else if averageLevel <= 88{
+        }else if level <= 88{
             dangerLevel = "Damage in around 4 hours"
-        }else if averageLevel <= 91{
+        }else if level <= 91{
             dangerLevel = "Damage in around 2 hours"
-        }else if averageLevel <= 94{
+        }else if level <= 94{
             dangerLevel = "Damage in around 1 hour"
-        }else if averageLevel <= 97{
+        }else if level <= 97{
             dangerLevel = "Damage in around 30 minutes"
-        }else if averageLevel <= 100{
+        }else if level <= 100{
             dangerLevel = "Damage in around 15 minutes"
         }else{
             dangerLevel = "Damage very soon"

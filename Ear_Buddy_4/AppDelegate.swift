@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
 
     var recorder: AVAudioRecorder?
     
-    var loop = true
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
@@ -120,7 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
             recorder?.prepareToRecord()
         }
 
-        loop = true
         //var timer = NSTimer()
         while(checkLevels()) {}
     }
@@ -142,14 +139,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         //println("\(UIApplicationState.self)")
         
-        if (UIApplicationDidBecomeActiveNotification != nil /*&& UIApplicationState.self != UIApplicationState.Inactive*/) {
+        if () {
             if level < 88{
-                //println(level)
+                println(level)
                 sleep(3)
                 //No Notification
                 return true
             }else if level <= 94{
-                //println(level)
+                println(level)
                 sleep(3)
                 if (tracker < 1) {
                     tracker = 1
