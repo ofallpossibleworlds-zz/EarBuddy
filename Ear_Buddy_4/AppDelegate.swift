@@ -54,8 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         let defaultActions:NSArray = [firstAction, secondAction]
         
         firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
-        firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
-        
+                
         // NSSet of all our categories
         
         let categories:NSSet = NSSet(objects: firstCategory)
@@ -85,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
     }
 
-    @IBAction func checkLevels() {
+    func checkLevels() {
         if recorder?.recording == false{
             recorder?.recordForDuration(3.0)
         }
@@ -117,7 +116,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         
         if (averageLevel >= 94) {
+            var notification:UILocalNotification = UILocalNotification()
+            notification.category = "FIRST_CATEGORY"
+            notification.alertBody = "Noise Levels Dangerously High"
+            notification.fireDate =
             
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }
         
         
