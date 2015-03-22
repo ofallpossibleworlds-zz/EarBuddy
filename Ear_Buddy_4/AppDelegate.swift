@@ -117,10 +117,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         } else {
             recorder?.prepareToRecord()
         }
-
-        //var timer = NSTimer()
-        while(checkLevels()) {}
+        checkLevels()
+        
     }
+    
+    
 
     var tracker = 0
     
@@ -139,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         //println("\(UIApplicationState.self)")
         
-        if () {
+        
             if level < 88{
                 println(level)
                 sleep(3)
@@ -187,7 +188,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
                     return true
                 }
             }
-        }
+        
         println("Exited.")
         return false
         
