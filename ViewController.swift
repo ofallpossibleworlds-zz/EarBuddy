@@ -195,7 +195,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         
-        let levelOutput = NSString(format: "%.2f", -1.0 * averageLevel!)
+        let levelOutput = NSString(format: "%.2f", (0.625) * averageLevel! + 100.0)
         
         
         if (averageLevel >= 94) {
