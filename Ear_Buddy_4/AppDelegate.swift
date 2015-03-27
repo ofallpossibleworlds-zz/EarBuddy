@@ -36,10 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         secondAction.activationMode = UIUserNotificationActivationMode.Foreground
         secondAction.destructive = false
         secondAction.authenticationRequired = false
+        
         /*
         var thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         thirdAction.identifier = "THIRD_ACTION"
-        thirdAction.title = "Third Action"
+        thirdAction.title = "Continue"
         
         thirdAction.activationMode = UIUserNotificationActivationMode.Background
         thirdAction.destructive = false
@@ -50,8 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         var firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
         firstCategory.identifier = "FIRST_CATEGORY"
+        //var secondCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        //firstCategory.identifier = "SECOND_CATEGORY"
+        
         
         let defaultActions:NSArray = [firstAction, secondAction]
+        //let endActions:NSArray = [firstAction, thirdAction]
         
         firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
                 
@@ -117,15 +122,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         } else {
             recorder?.prepareToRecord()
         }
-        checkLevels()
+        //
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(runChecker()), name: "Switch On", object: nil)
+        
         
     }
     
-    
+    func runChecker() {
+        while (counter < 360) {
+            checkLevels()
+        }
+        var notification:UILocalNotification = UILocalNotification()
+        notification.category = "FIRST_CATEGORY"
+        notification.alertBody = "Background watch has finished. Return to app to restart?"
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        NSNotificationCenter.defaultCenter().postNotificationName("Switch off", object: nil)
+    }
 
     var tracker = 0
+    var counter = 0
     
     func checkLevels() -> Bool {
+        counter++;
         recorder?.meteringEnabled == true
         if recorder?.recording == false{
             recorder?.recordForDuration(3)

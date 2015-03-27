@@ -233,6 +233,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @IBAction func backGroundMode(sender: UISwitch) {
+        if (sender.on) {
+            NSNotificationCenter.defaultCenter().postNotificationName("Switch on", object: nil)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("Switch off", object: nil)
+        }
+    }
 }
 
 
