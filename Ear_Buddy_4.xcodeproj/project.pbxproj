@@ -15,6 +15,7 @@
 		D55AB3311ABE30ED00BDC2E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */; };
 		D5C7D5BD1ABE35C1003DBFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */; };
 		D5DF7C461ABE9521003CA14F /* earbuddy icon 180 version.png in Resources */ = {isa = PBXBuildFile; fileRef = D5DF7C451ABE9521003CA14F /* earbuddy icon 180 version.png */; };
+		D5EA637F1AC4DD620086A24C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EA637E1AC4DD620086A24C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D55AB3301ABE30ED00BDC2E3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		D5C7D5BC1ABE35C1003DBFC4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D5DF7C451ABE9521003CA14F /* earbuddy icon 180 version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earbuddy icon 180 version.png"; sourceTree = "<group>"; };
+		D5EA637E1AC4DD620086A24C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EA637F1AC4DD620086A24C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		D55AB2FF1ABE30C100BDC2E3 = {
 			isa = PBXGroup;
 			children = (
+				D5EA637E1AC4DD620086A24C /* MapKit.framework */,
 				D55AB30A1ABE30C100BDC2E3 /* Ear_Buddy_4 */,
 				D55AB3231ABE30C100BDC2E3 /* Ear_Buddy_4Tests */,
 				D55AB3091ABE30C100BDC2E3 /* Products */,
@@ -169,6 +173,9 @@
 						CreatedOnToolsVersion = 6.2;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};

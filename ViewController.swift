@@ -9,13 +9,17 @@
 import UIKit
 import AVFoundation
 import CoreData
+import CoreLocation
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVAudioRecorderDelegate {
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVAudioRecorderDelegate, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
     var data = [NSManagedObject]()
+    //var allowed = CLAuthorizationStatus.NotDetermined
+    var locationManager = CLLocationManager()
     //var stateChecker: CustomObject = CustomObject(UIApplication)
     
     
@@ -49,7 +53,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
         
-        
+        var locationAllower = CLLocationManager.authorizationStatus()
+        var locationAllowed = true
+        if (locationAllower == CLAuthorizationStatus.Restricted || locationAllower == CLAuthorizationStatus.Denied) {
+            locationAllowed = false
+        } else if (locationAllower == CLAuthorizationStatus.NotDetermined) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        if (locationAllower == CLAuthorizationStatus.AuthorizedAlways || locationAllower == CLAuthorizationStatus.AuthorizedWhenInUse) {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation();
+        }
         
         //Audio
         let dirPaths =
@@ -86,6 +101,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             recorder?.prepareToRecord()
         }
         
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location:CLLocation = locations[locations.count-1] as CLLocation
+
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+
     }
     
     func tableView(tableView: UITableView,
@@ -180,6 +204,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var averageLevel = recorder?.averagePowerForChannel(0)
         var level = (0.625 * averageLevel! + 90.0)
         
+        
         if level < 85{
             dangerLevel = "No Danger"
         }else if level <= 88{
@@ -195,8 +220,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else{
             dangerLevel = "Damage very soon"
         }
-        
-        
+
+                
         let levelOutput = NSString(format: "%.2f dB", (0.625) * averageLevel! + 100.0)
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
         
@@ -209,7 +234,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
         
+        if (level > 100) {
+            let reportActionHandler = { (action:UIAlertAction!) -> Void in
+                let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the database to handle noise complaints has not been set up yet.", preferredStyle: .Alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertMessage, animated: true, completion: nil)
+            }
+            let callAction = UIAlertAction(title: "Report", style: .Default, handler: reportActionHandler)
+            alertController.addAction(callAction)
+        }
         self.presentViewController(alertController, animated: true, completion: nil)
+        
     }
     
     
@@ -217,7 +252,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -226,13 +261,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             ),
             dispatch_get_main_queue(), closure)
     }
-    
+    */
     @IBAction func moreInfo(sender: AnyObject) {
         if let url = NSURL(string: "http://www.dangerousdecibels.org/virtualexhibit/6measuringsound.html") {
             UIApplication.sharedApplication().openURL(url)
         }
     }
-    
+    /*
     @IBAction func backGroundMode(sender: UISwitch) {
         if (sender.on) {
             NSNotificationCenter.defaultCenter().postNotificationName("Switch on", object: nil)
@@ -240,6 +275,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             NSNotificationCenter.defaultCenter().postNotificationName("Switch off", object: nil)
         }
     }
+    */
 }
 
 

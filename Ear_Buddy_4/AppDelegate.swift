@@ -11,15 +11,15 @@ import AVFoundation
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate/*, AVAudioRecorderDelegate*/ {
 
     var window: UIWindow?
 
-    var recorder: AVAudioRecorder?
+    //var recorder: AVAudioRecorder?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
+        /*
         // Actions
         var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         firstAction.identifier = "FIRST_ACTION"
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
 
         
         
-        
+        */
         
         
         return true
@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
+        /*
         let dirPaths =
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
@@ -124,10 +124,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         }
         //
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(runChecker()), name: "Switch On", object: nil)
-        
+        */
         
     }
-    
+    /*
     func runChecker() {
         while (counter < 360) {
             checkLevels()
@@ -217,7 +217,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioRecorderDelegate {
         
         self.presentViewController(alertController, animated: true, completion: nil)*/
     }
-
+    */
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
