@@ -221,7 +221,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             dangerLevel = "Damage very soon"
         }
 
-                
+        
         let levelOutput = NSString(format: "%.2f dB", (0.625) * averageLevel! + 100.0)
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
         
@@ -235,6 +235,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
         
         if (level > 100) {
+            // Reporting to database of noise level and location would occur here in presence of database.
             let reportActionHandler = { (action:UIAlertAction!) -> Void in
                 let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the database to handle noise complaints has not been set up yet.", preferredStyle: .Alert)
                 alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
