@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Connor Goggans, Robby Marshall, and Vicky Yao. All rights reserved.
 //
 
+
+//  Check to see if it pushes
+
 import UIKit
 import AVFoundation
 import CoreData
@@ -70,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dirPaths =
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
-        let docsDir = dirPaths[0] as String
+        let docsDir = dirPaths[0] as! String
         let soundFilePath =
         docsDir.stringByAppendingPathComponent("sound.caf")
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
@@ -91,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         recorder = AVAudioRecorder(URL: soundFileURL,
-            settings: recordSettings, error: &error)
+            settings: recordSettings as [NSObject : AnyObject], error: &error)
         
         self.recorder?.meteringEnabled = true;
         
@@ -104,7 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location:CLLocation = locations[locations.count-1] as CLLocation
+        var location:CLLocation = locations[locations.count-1] as! CLLocation
 
     }
     
@@ -123,10 +126,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let cell =
             tableView.dequeueReusableCellWithIdentifier("Cell")
-                as UITableViewCell
+               as! UITableViewCell
             
             let storeData = data[indexPath.row]
-            cell.textLabel!.text = storeData.valueForKey("data") as String?
+            cell.textLabel!.text = storeData.valueForKey("data") as! String?
             
             return cell
     }
@@ -139,7 +142,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func saveData(name: String) {
         //1
         let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
+        UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -168,7 +171,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //1
         let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
+        UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         
@@ -180,7 +183,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let fetchedResults =
         managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
+            error: &error) as! [NSManagedObject]?
         
         if let results = fetchedResults {
             data = results.reverse()
@@ -230,7 +233,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        let alertController = UIAlertController(title: "Level", message: levelOutput + "\n" + dangerLevel, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Level", message: (levelOutput as String) + "\n" + dangerLevel, preferredStyle: UIAlertControllerStyle.Alert)
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
         
